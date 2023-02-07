@@ -50,4 +50,18 @@ public class Transport {
     public void setMaximumMovementSpeed(int maximumMovementSpeed) {
         this.maximumMovementSpeed = maximumMovementSpeed;
     }
+
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", productionYear=" + productionYear +
+                ", productionCountry='" + productionCountry + '\'' +
+                ", maximumMovementSpeed=" + maximumMovementSpeed +
+                '}';
+    }
+
 }

@@ -84,8 +84,8 @@ public class Car extends Transport{
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Car(String brand, String model, Double engineVolume, String color, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, String numberOfSeats, boolean typeOfTires, Key key) {
-        super();
+    public Car(String brand, String model, Double engineVolume, String color,int maximumMovementSpeed, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, String numberOfSeats, boolean typeOfTires, Key key) {
+        super(brand, model, color, productionYear,productionCountry);
         this.engineVolume = (engineVolume <=0 ? 1.5 : engineVolume);
         this.transmission = (isTransmissionEmpty(transmission) ? "default" : transmission);
         this.bodyType = (isBodyTypeEmpty(bodyType) ? "default" : bodyType);
@@ -96,11 +96,11 @@ public class Car extends Transport{
     }
 
     public static void main(String[] args) {
-        Car lada = new Car("Lada", "Granta",1.7, "yellow", 2015, "Russia", "mechanic", "sedan", "А002АА","4", true, new Key(false,true));
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "black", 2020, " Germany", "automatic", "coupe", "O001OO", "4", true, new Key(false,true));
-        Car bmw = new Car("BMW", "Z8", 3.0, "black", 2021, "Germany","automatic", "convertible", "O010OO", "2", false, new Key(true,true));
-        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, "red", 2018, "South Korea","mechanic", "crossover", "B777BB", "4", false, new Key(false,false) );
-        Car hyundai = new Car("Hyundai","Avante",1.6, "orange", 2016, "South Korea","automatic", "sedan", "Н054НН", "4", true, null);
+        Car lada = new Car("Lada", "Granta",1.7, "yellow",160 , 2015, "Russia", "mechanic", "sedan", "А002АА","4", true, new Key(false,true));
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "black",280, 2020, " Germany", "automatic", "coupe", "O001OO", "4", true, new Key(false,true));
+        Car bmw = new Car("BMW", "Z8", 3.0, "black",270, 2021, "Germany","automatic", "convertible", "O010OO", "2", false, new Key(true,true));
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2.4, "red",180, 2018, "South Korea","mechanic", "crossover", "B777BB", "4", false, new Key(false,false) );
+        Car hyundai = new Car("Hyundai","Avante",1.6, "orange",160, 2016, "South Korea","automatic", "sedan", "Н054НН", "4", true, null);
         System.out.println(lada);
         System.out.println(audi);
         System.out.println(bmw);
@@ -136,11 +136,8 @@ public class Car extends Transport{
 
     @Override
     public String toString() {
-        return "Car: " +
-
+        return super.toString() + ", " +
                 ", engineVolume = " + engineVolume +
-                ", color = " + color + ' ' +
-
                 ", transmission = " + transmission + ' ' +
                 ", bodyType = " + bodyType + ' ' +
                 ", registrationNumber = " + registrationNumber + ' ' +
