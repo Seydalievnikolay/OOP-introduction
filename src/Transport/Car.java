@@ -1,7 +1,7 @@
 package Transport;
 
 
-public class Car {
+public class Car extends Transport{
     private final String brand;
     private final String model;
     public Double engineVolume;
@@ -92,9 +92,13 @@ public class Car {
         this.key = key;
     }
 
-
+    public Car(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed) {
+        super(brand, model, color, productionYear, productionCountry, maximumMovementSpeed);
+    }
 
     public Car(String brand, String model, Double engineVolume, String color, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, String numberOfSeats, boolean typeOfTires, Key key) {
+        super();
+
         this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
         this.model = (model == null || model.isEmpty()? "default" : model);
         this.engineVolume = (engineVolume <=0 ? 1.5 : engineVolume);
