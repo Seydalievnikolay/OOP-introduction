@@ -2,12 +2,10 @@ package Transport;
 
 
 public class Car extends Transport{
-    private final String brand;
-    private final String model;
+
     public Double engineVolume;
     public String color;
-    private final int productionYear;
-    private final String productionCountry;
+
     public String transmission;
     private final String  bodyType;
     public String registrationNumber;
@@ -16,14 +14,6 @@ public class Car extends Transport{
 
     private  Key key;
 
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
 
     public Double getEngineVolume() {
         return engineVolume;
@@ -41,13 +31,9 @@ public class Car extends Transport{
         return registrationNumber;
     }
 
-    public int getProductionYear() {
-        return productionYear;
-    }
 
-    public String getProductionCountry() {
-        return productionCountry;
-    }
+
+
 
     public String getBodyType() {
         return bodyType;
@@ -92,19 +78,15 @@ public class Car extends Transport{
         this.key = key;
     }
 
-    public Car(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed) {
+    public Car(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed, String bodyType, String numberOfSeats) {
         super(brand, model, color, productionYear, productionCountry, maximumMovementSpeed);
+        this.bodyType = bodyType;
+        this.numberOfSeats = numberOfSeats;
     }
 
     public Car(String brand, String model, Double engineVolume, String color, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, String numberOfSeats, boolean typeOfTires, Key key) {
         super();
-
-        this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
-        this.model = (model == null || model.isEmpty()? "default" : model);
         this.engineVolume = (engineVolume <=0 ? 1.5 : engineVolume);
-        this.color = (color == null || color.isEmpty() ? "белый" : color);
-        this.productionYear = (productionYear <0 ? 2000 : productionYear);
-        this.productionCountry = (productionCountry == null ? "default" : brand);
         this.transmission = (isTransmissionEmpty(transmission) ? "default" : transmission);
         this.bodyType = (isBodyTypeEmpty(bodyType) ? "default" : bodyType);
         this.registrationNumber = (isRegistrationNumberEmpty(registrationNumber) ? "default" : registrationNumber);
@@ -155,12 +137,10 @@ public class Car extends Transport{
     @Override
     public String toString() {
         return "Car: " +
-                "brand = " + brand + ' ' +
-                ", model = " + model + ' ' +
+
                 ", engineVolume = " + engineVolume +
                 ", color = " + color + ' ' +
-                ", productionYea = " + productionYear +
-                ", productionCountry = " + productionCountry + ' ' +
+
                 ", transmission = " + transmission + ' ' +
                 ", bodyType = " + bodyType + ' ' +
                 ", registrationNumber = " + registrationNumber + ' ' +

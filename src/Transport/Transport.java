@@ -9,12 +9,12 @@ public class Transport {
     public int maximumMovementSpeed;
 
     public Transport(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed) {
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.productionYear = productionYear;
-        this.productionCountry = productionCountry;
-        this.maximumMovementSpeed = maximumMovementSpeed;
+        this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
+        this.model = (model == null || model.isEmpty()? "default" : model);
+        this.color = (color == null || color.isEmpty() ? "белый" : color);
+        this.productionYear = (productionYear <0 ? 2000 : productionYear);
+        this.productionCountry = (productionCountry == null ? "default" : brand);
+        this.maximumMovementSpeed = (maximumMovementSpeed < 0 ? 120 : maximumMovementSpeed);
     }
 
 
