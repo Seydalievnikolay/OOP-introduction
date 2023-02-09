@@ -1,7 +1,7 @@
 package Transport;
 
 
-public class Car extends Transport{
+/*public class Car extends Transport{
 
     public Double engineVolume;
     public String color;
@@ -79,13 +79,13 @@ public class Car extends Transport{
     }
 
     public Car(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed, String bodyType, String numberOfSeats) {
-        super(brand, model, color, productionYear, productionCountry, maximumMovementSpeed);
+        //super(brand, model, color, productionYear, productionCountry, maximumMovementSpeed);
         this.bodyType = bodyType;
         this.numberOfSeats = numberOfSeats;
     }
 
     public Car(String brand, String model, Double engineVolume, String color,int maximumMovementSpeed, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, String numberOfSeats, boolean typeOfTires, Key key) {
-        super(brand, model, color, productionYear,productionCountry);
+        //super(brand, model, color, productionYear,productionCountry, maximumMovementSpeed);
         this.engineVolume = (engineVolume <=0 ? 1.5 : engineVolume);
         this.transmission = (isTransmissionEmpty(transmission) ? "default" : transmission);
         this.bodyType = (isBodyTypeEmpty(bodyType) ? "default" : bodyType);
@@ -178,4 +178,4 @@ public class Car extends Transport{
         }
     }
 
-}
+}*/
