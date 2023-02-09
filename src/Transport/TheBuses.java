@@ -12,7 +12,7 @@ public class TheBuses implements Competing {
         TheBuses bus3 = new TheBuses("bmw","solaris",8.2);
         TheBuses bus4 = new TheBuses("duf","bigger",8.4);
         bus1.pitStop();
-        bus2.pitStop();
+
 
 
     }
