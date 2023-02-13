@@ -24,7 +24,7 @@ public class PrintCar extends  Driver {
 
     public static void main(String[] args) {
         DriverB driverB = new DriverB("Ivanov Ivan Ivanovich", true,9);
-        DriverB driverB2 = new DriverB("Ivanov Ivan Ivanovich", true,4);
+        DriverB driverB2 = new DriverB("Ivanov Petr Ivanovich", true,4);
         DriverB driverB3 = new DriverB("Ivanov Ivan Ivanovich", true,5);
         DriverB driverB4 = new DriverB("Ivanov Ivan Ivanovich", true,8);
         PassengerCar passengerCar= new PassengerCar("vaz", "2199",1.3,driverB);
