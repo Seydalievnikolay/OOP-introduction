@@ -1,23 +1,34 @@
 package Transport;
 
-public abstract  class Transport {
+public abstract  class Transport <T extends Driver> implements Competing {
     String brand;
     String model;
     Double engineVolume;
-    Boolean startTheMoving;
-    Boolean finishMovement;
+    T driver;
 
-    public Transport(String brand, String model, Double engineVolume) {
-        this.brand = (isBrandIsEmpty(brand) ? "default" : brand );
+
+    public Transport(String brand, String model, Double engineVolume, T driver) {
+        this.brand = (isBrandIsEmpty(brand) ? "default" : brand);
         this.model = (isModelIsEmpty(model) ? "default" : model);
-        this.engineVolume = (engineVolume <= 0 ? 2.2 : engineVolume);
+        setEngineVolume(engineVolume);
+        setDriver(driver);
     }
+
 
     private boolean isBrandIsEmpty(String brand) {
         return brand == null || brand.isEmpty();
     }
-    private  boolean isModelIsEmpty(String model) {
+
+    private boolean isModelIsEmpty(String model) {
         return model == null || model.isEmpty();
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
     }
 
     public String getBrand() {
@@ -41,104 +52,37 @@ public abstract  class Transport {
     }
 
     public void setEngineVolume(Double engineVolume) {
-        this.engineVolume = engineVolume;
+        if(engineVolume <= 0 ){engineVolume = 2.2; }
+        this.engineVolume=engineVolume;
     }
 
-    public abstract void pitStop();
+    public void pitStop() {
 
-    public abstract void bestLapTime();
+    }
 
-    public abstract void maximumSpeed();
+    public void bestLapTime() {
+
+    }
+
+    public void maximumSpeed() {
+
+    }
 
     public void startMoving() {
-        startTheMoving = true;
-        finishMovement = false;
-        System.out.println("Начать движение ");
-
     }
+
     public void finishTheMovement() {
-        startTheMoving = false;
-        finishMovement = true;
-        System.out.println("Закончить движение ");
+    }
+    public void refuelTheCar() {
     }
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
+        return "Транспорт{" +
+                "бренд ='" + brand + '\'' +
+                ", модель ='" + model + '\'' +
+                ", объём двигателя =" + engineVolume +
+                ", водитель =" + driver +
                 '}';
     }
-
-    /*public interface Competing {
-        void pitStop();
-
-        void bestLapTime();
-
-        void maximumSpeed();
-    }*/
-    /*private final String brand;
-    private final String model;
-    public String color;
-    private final int productionYear;
-    private final String productionCountry;
-    public int maximumMovementSpeed;
-
-    public Transport(String brand, String model, String color, int productionYear, String productionCountry, int maximumMovementSpeed) {
-        this.brand = (brand == null || brand.isEmpty() ? "default" : brand);
-        this.model = (model == null || model.isEmpty()? "default" : model);
-        this.color = (color == null || color.isEmpty() ? "белый" : color);
-        this.productionYear = (productionYear <0 ? 2000 : productionYear);
-        this.productionCountry = (productionCountry == null ? "default" : brand);
-        this.maximumMovementSpeed = (maximumMovementSpeed < 0 ? 120 : maximumMovementSpeed);
-    }
-
-
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public int getMaximumMovementSpeed() {
-        return maximumMovementSpeed;
-    }
-
-    public void setMaximumMovementSpeed(int maximumMovementSpeed) {
-        this.maximumMovementSpeed = maximumMovementSpeed;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", productionYear=" + productionYear +
-                ", productionCountry='" + productionCountry + '\'' +
-                ", maximumMovementSpeed=" + maximumMovementSpeed +
-                '}';
-    }*/
-
 }
