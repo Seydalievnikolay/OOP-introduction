@@ -1,35 +1,38 @@
 package Transport;
 
-public class TheBuses implements Competing {
+public class TheBuses extends Transport <DriverC>  {
 
 
-    public TheBuses(String brand, String model, Double engineVolume) {
-    }
-
-    public static void main(String [] args) {
-        TheBuses bus1 = new TheBuses("kia","optima",8.3);
-        TheBuses bus2 = new TheBuses("suzuki","ocean",8.1);
-        TheBuses bus3 = new TheBuses("bmw","solaris",8.2);
-        TheBuses bus4 = new TheBuses("duf","bigger",8.4);
-        bus1.pitStop();
-
-
-
+    public TheBuses(String brand, String model, Double engineVolume, DriverC driver) {
+        super(brand, model, engineVolume, driver);
     }
 
     @Override
     public void pitStop() {
-        System.out.println("Пит - стоп");
+        System.out.println("Автобус марки " + getBrand() + " на пит - стопе ");
     }
     @Override
     public void bestLapTime() {
-        System.out.println("Лучшее время круга ");
+        int minTime = 4;
+        int maxTime = 20;
+        int lapTime = (int) (Math.random()*((maxTime-minTime)+2));
+        System.out.println("Лучшее время круга автобуса " + lapTime + " минут");
     }
     @Override
     public void maximumSpeed() {
-        System.out.println("Максимальная скорость ");
+        int minSpeed = 40;
+        int maxSpeed = 120;
+        int lapTime = (int) (Math.random()*((maxSpeed-minSpeed)+11));
+        System.out.println("Максимальная скорость автобуса " + lapTime + "км/ч");
     }
-
+    @Override
+    public  void startMoving() {
+        System.out.println("Автобус  " + getBrand()+ " начал движение");
+    }
+    @Override
+    public  void finishTheMovement() {
+        System.out.println("Автобус" + getBrand()+ " закончил движение");
+    }
 
 
 }

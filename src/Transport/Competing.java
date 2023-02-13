@@ -5,4 +5,9 @@ public interface Competing {
     void bestLapTime();
     void maximumSpeed();
 
+    void startMoving();
+
+    void finishTheMovement();
+
+    void refuelTheCar();
 }
