@@ -59,7 +59,19 @@ public class PrintCar extends  Driver {
         System.out.println(driverD2.getPrintInfo(trucks2));
         System.out.println(driverD3.getPrintInfo(trucks3));
         System.out.println(driverD4.getPrintInfo(trucks4));
+        System.out.println();
 
+        for (TypeOfBody typeOfBody : TypeOfBody.values()) {
+            System.out.println(typeOfBody.getType());
+        }
+        System.out.println();
+        for (Capacity capacity : Capacity.values()) {
+            System.out.println(capacity.getCapacityFrom() + capacity.getCapacityUpTo());
+        }
+        System.out.println();
+        for (LoadCapacity loadCapacity : LoadCapacity.values()) {
+            System.out.println(loadCapacity.getWeightFrom()+ " - " + loadCapacity.getWeightUpTo());
+        }
 
 
     }
