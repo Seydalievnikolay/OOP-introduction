@@ -34,5 +34,56 @@ public class TheBuses extends Transport <DriverC>  {
         System.out.println("Автобус" + getBrand()+ " закончил движение");
     }
 
+    @Override
+    public void getType() {
 
+    }
+
+    @Override
+    public void printType() {
+        System.out.println(Type.TheBuses);
+    }
+
+    @Override
+    public void PassDiagnostics() throws TransportTypeException {
+            try {
+                throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
+            } catch (TransportTypeException e) {
+                throw new RuntimeException(e);
+            }
+
+    }
 }
+enum Capacity{
+    ESPECIALLY_SMALL(null, " до 10 мест"),
+    SMALL(null, " до 25 мест"),
+    MIDDLE("25 -", " 50"),
+    BIG("50 -", " 80"),
+    ESPECIALLY_BIG("80 -", " 120");
+
+    private String capacityFrom;
+    private String capacityUpTo;
+
+    Capacity(String capacityFrom,String capacityUpTo) {
+        this.capacityFrom=capacityFrom;
+        this.capacityUpTo = capacityUpTo;
+    }
+
+    public String getCapacityFrom() {
+        return capacityFrom;
+    }
+
+    public void setCapacityFrom(String capacityFrom) {
+        this.capacityFrom = capacityFrom;
+    }
+
+    public String getCapacityUpTo() {
+        return capacityUpTo;
+    }
+
+    public void setCapacityUpTo(String capacityUpTo) {
+        this.capacityUpTo = capacityUpTo;
+    }
+}
+
+
