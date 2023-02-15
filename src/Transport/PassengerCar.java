@@ -36,13 +36,16 @@ public class PassengerCar extends Transport <DriverB>  {
 
     @Override
     public void getType() {
-
-
     }
 
     @Override
     public void printType() {
         System.out.println(Type.PassengerCar);
+    }
+
+    @Override
+    public void PassDiagnostics() {
+        System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
     }
 }
 enum TypeOfBody{
@@ -68,6 +71,7 @@ enum TypeOfBody{
     public void setType(String type) {
         this.type = type;
     }
+
 
     @Override
     public String toString() {

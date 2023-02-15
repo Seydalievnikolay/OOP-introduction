@@ -22,7 +22,7 @@ public class PrintCar extends  Driver {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TransportTypeException {
         DriverB driverB = new DriverB("Ivanov Ivan Ivanovich", true,9);
         DriverB driverB2 = new DriverB("Ivanov Petr Ivanovich", true,4);
         DriverB driverB3 = new DriverB("Ivanov Ivan Ivanovich", true,5);
@@ -72,7 +72,10 @@ public class PrintCar extends  Driver {
         for (LoadCapacity loadCapacity : LoadCapacity.values()) {
             System.out.println(loadCapacity.getWeightFrom()+ " - " + loadCapacity.getWeightUpTo());
         }
-
+        System.out.println();
+        passengerCar.PassDiagnostics();
+        trucks.PassDiagnostics();
+        theBuses.PassDiagnostics();
 
     }
 

@@ -43,6 +43,16 @@ public class TheBuses extends Transport <DriverC>  {
     public void printType() {
         System.out.println(Type.TheBuses);
     }
+
+    @Override
+    public void PassDiagnostics() throws TransportTypeException {
+            try {
+                throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
+            } catch (TransportTypeException e) {
+                throw new RuntimeException(e);
+            }
+
+    }
 }
 enum Capacity{
     ESPECIALLY_SMALL(null, " до 10 мест"),
