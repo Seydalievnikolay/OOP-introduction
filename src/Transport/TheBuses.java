@@ -51,7 +51,6 @@ public class TheBuses extends Transport <DriverC>  {
             } catch (TransportTypeException e) {
                 throw new RuntimeException(e);
             }
-
     }
 }
 enum Capacity{
