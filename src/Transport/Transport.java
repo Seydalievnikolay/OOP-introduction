@@ -1,5 +1,7 @@
 package Transport;
 
+import java.io.IOException;
+
 public abstract  class Transport <T extends Driver> implements Competing {
     String brand;
     String model;
@@ -52,8 +54,10 @@ public abstract  class Transport <T extends Driver> implements Competing {
     }
 
     public void setEngineVolume(Double engineVolume) {
-        if(engineVolume <= 0 ){engineVolume = 2.2; }
-        this.engineVolume=engineVolume;
+        if (engineVolume <= 0) {
+            engineVolume = 2.2;
+        }
+        this.engineVolume = engineVolume;
     }
 
     public void pitStop() {
@@ -71,13 +75,15 @@ public abstract  class Transport <T extends Driver> implements Competing {
 
     public void finishTheMovement() {
     }
+
     public void refuelTheCar() {
     }
 
     public abstract void getType();
 
     public abstract void printType();
-    public void passDiagnostics() throws TransportTypeException {
+
+    public void passDiagnostics() throws TransportTypeException, IOException {
     }
 
     @Override
