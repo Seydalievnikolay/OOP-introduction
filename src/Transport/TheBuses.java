@@ -44,12 +44,8 @@ public class TheBuses extends Transport <DriverC>  {
     }
 
     @Override
-    public void PassDiagnostics() throws TransportTypeException {
-            try {
-                throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
-            } catch (TransportTypeException e) {
-                throw new RuntimeException(e);
-            }
+    public void passDiagnostics() throws TransportTypeException {
+        TransportTypeException transportTypeException = new TransportTypeException("”Автобусы” диагностику проходить не должны");
     }
 }
 enum Capacity{

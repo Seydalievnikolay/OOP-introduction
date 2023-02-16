@@ -74,9 +74,14 @@ public class PrintCar extends  Driver {
         }
 
         System.out.println();
-        passengerCar.PassDiagnostics();
-        trucks.PassDiagnostics();
-        theBuses.PassDiagnostics();
+        passengerCar.passDiagnostics();
+        trucks.passDiagnostics();
+
+        try {
+            theBuses.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println("”Автобусы” диагностику проходить не должны");
+        }
 
     }
 

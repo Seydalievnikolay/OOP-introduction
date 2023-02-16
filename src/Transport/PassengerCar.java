@@ -43,7 +43,7 @@ public class PassengerCar extends Transport <DriverB>  {
     }
 
     @Override
-    public void PassDiagnostics() {
+    public void passDiagnostics() {
         System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
     }
 }
