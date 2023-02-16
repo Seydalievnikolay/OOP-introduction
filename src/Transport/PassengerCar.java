@@ -6,7 +6,6 @@ public class PassengerCar extends Transport <DriverB>  {
         super(brand, model, engineVolume, driver);
     }
 
-
     @Override
     public void pitStop() {
         System.out.println("Легковой автомобиль марки " + getBrand() + " на пит - стопе");
@@ -44,7 +43,7 @@ public class PassengerCar extends Transport <DriverB>  {
     }
 
     @Override
-    public void PassDiagnostics() {
+    public void passDiagnostics() {
         System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
     }
 }

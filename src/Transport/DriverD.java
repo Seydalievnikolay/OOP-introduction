@@ -21,4 +21,5 @@ public class DriverD  < T extends Trucks > extends  Driver{
     public  String getPrintInfo(T transport) {
         return "Водитель "+ transport.getDriver().getName()+ " управляет автомобилем "+ transport.getBrand() +" " + transport.getModel()+" и будет участвовать в заезде";
     }
+
 }

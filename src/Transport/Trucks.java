@@ -35,7 +35,6 @@ public class Trucks extends Transport <DriverD> {
 
     @Override
     public void getType() {
-
     }
 
     @Override
@@ -44,7 +43,7 @@ public class Trucks extends Transport <DriverD> {
     }
 
     @Override
-    public void PassDiagnostics() {
+    public void passDiagnostics() {
         System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
     }
 

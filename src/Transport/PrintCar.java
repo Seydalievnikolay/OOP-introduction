@@ -1,5 +1,7 @@
 package Transport;
 
+import java.io.IOException;
+
 public class PrintCar extends  Driver {
 
 
@@ -22,7 +24,7 @@ public class PrintCar extends  Driver {
 
     }
 
-    public static void main(String[] args) throws TransportTypeException {
+    public static void main(String[] args) throws Exception, TransportTypeException {
         DriverB driverB = new DriverB("Ivanov Ivan Ivanovich", true,9);
         DriverB driverB2 = new DriverB("Ivanov Petr Ivanovich", true,4);
         DriverB driverB3 = new DriverB("Ivanov Ivan Ivanovich", true,5);
@@ -72,10 +74,17 @@ public class PrintCar extends  Driver {
         for (LoadCapacity loadCapacity : LoadCapacity.values()) {
             System.out.println(loadCapacity.getWeightFrom()+ " - " + loadCapacity.getWeightUpTo());
         }
+
         System.out.println();
-        passengerCar.PassDiagnostics();
-        trucks.PassDiagnostics();
-        theBuses.PassDiagnostics();
+        passengerCar.passDiagnostics();
+        trucks.passDiagnostics();
+
+        try {
+            theBuses.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println("”Автобусы” диагностику проходить не должны");
+        }
+
 
     }
 

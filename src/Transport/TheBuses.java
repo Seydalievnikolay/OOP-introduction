@@ -1,5 +1,9 @@
 package Transport;
 
+import com.sun.jdi.connect.TransportTimeoutException;
+
+import java.io.IOException;
+
 public class TheBuses extends Transport <DriverC>  {
 
 
@@ -36,7 +40,6 @@ public class TheBuses extends Transport <DriverC>  {
 
     @Override
     public void getType() {
-
     }
 
     @Override
@@ -45,13 +48,8 @@ public class TheBuses extends Transport <DriverC>  {
     }
 
     @Override
-    public void PassDiagnostics() throws TransportTypeException {
-            try {
-                throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
-            } catch (TransportTypeException e) {
-                throw new RuntimeException(e);
-            }
-
+    public void passDiagnostics() throws TransportTypeException, IOException{
+        throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
     }
 }
 enum Capacity{
