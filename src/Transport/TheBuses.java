@@ -49,7 +49,7 @@ public class TheBuses extends Transport <DriverC>  {
 
     @Override
     public void passDiagnostics() throws TransportTypeException, IOException{
-        throw new TransportTypeException();
+        throw new TransportTypeException("”Автобусы” диагностику проходить не должны");
     }
 }
 enum Capacity{
