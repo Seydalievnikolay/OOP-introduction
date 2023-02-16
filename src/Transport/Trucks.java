@@ -35,7 +35,6 @@ public class Trucks extends Transport <DriverD> {
 
     @Override
     public void getType() {
-
     }
 
     @Override

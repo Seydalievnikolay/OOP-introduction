@@ -36,7 +36,6 @@ public class TheBuses extends Transport <DriverC>  {
 
     @Override
     public void getType() {
-
     }
 
     @Override

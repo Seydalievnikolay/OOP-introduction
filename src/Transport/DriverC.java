@@ -22,6 +22,5 @@ public class DriverC < T extends TheBuses> extends  Driver{
         return "Водитель "+ transport.getDriver().getName()+ " управляет автомобилем "+ transport.getBrand() +" "+ transport.getModel()+" и будет участвовать в заезде";
     }
 
-
 }
 

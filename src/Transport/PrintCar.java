@@ -72,6 +72,7 @@ public class PrintCar extends  Driver {
         for (LoadCapacity loadCapacity : LoadCapacity.values()) {
             System.out.println(loadCapacity.getWeightFrom()+ " - " + loadCapacity.getWeightUpTo());
         }
+
         System.out.println();
         passengerCar.PassDiagnostics();
         trucks.PassDiagnostics();
