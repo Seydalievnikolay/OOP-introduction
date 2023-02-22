@@ -7,4 +7,5 @@ public interface Competing {
     void startMoving();
     void finishTheMovement();
     void refuelTheCar();
+
 }

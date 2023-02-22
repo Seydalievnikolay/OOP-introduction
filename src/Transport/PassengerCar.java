@@ -1,10 +1,44 @@
 package Transport;
 
-public class PassengerCar extends Transport <DriverB>  {
+import java.util.List;
 
-    public PassengerCar(String brand, String model, Double engineVolume, DriverB driver) {
-        super(brand, model, engineVolume, driver);
+public class PassengerCar extends Transport <DriverB>  implements ServiceStation{
+
+    public PassengerCar(String brand, String model, Double engineVolume, DriverB driver, List<Mechanic> mechanicLists) {
+        super(brand, model, engineVolume, driver,mechanicLists);
     }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("Провести техобслуживание" + getModel() + " " + getBrand());
+    }
+
+    @Override
+    public String toString() {
+        return "PassengerCar{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", driver=" + driver +
+                ", mechanicLists=" + mechanicLists +
+                '}';
+    }
+
+    @Override
+    public void fixTheCar() {
+        System.out.println("Починить машину" + getModel() + " " + getBrand());
+
+    }
+
+    @Override
+    public void nameOfTheDriver() {
+        System.out.println("Водителя автомобиля зовут - " + getDriver());
+    }
+    @Override
+    public void carMechanics() {
+        System.out.println("Механики закрепленные за автомобилем : " + getMechanicLists());
+    }
+
 
     @Override
     public void pitStop() {
@@ -45,6 +79,16 @@ public class PassengerCar extends Transport <DriverB>  {
     @Override
     public void passDiagnostics() {
         System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
+    }
+
+    @Override
+    public void addACarToTheQueue() {
+        System.out.println("Добавить авто в очередь - " + getBrand() + " " + getModel());
+    }
+
+    @Override
+    public void technicalInspectionOfTheCar() {
+        System.out.println("Провести техосмотр авто - " + getBrand() + " " + getModel());
     }
 }
 enum TypeOfBody{

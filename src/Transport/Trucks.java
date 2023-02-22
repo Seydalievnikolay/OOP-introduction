@@ -1,9 +1,39 @@
 package Transport;
 
-public class Trucks extends Transport <DriverD> {
+import java.util.List;
 
-    public Trucks(String brand, String model, Double engineVolume, DriverD driver) {
-        super(brand, model, engineVolume, driver);
+public class Trucks extends Transport <DriverD> implements ServiceStation {
+
+    public Trucks(String brand, String model, Double engineVolume, DriverD driver, List<Mechanic>mechanicLists) {
+        super(brand, model, engineVolume, driver, mechanicLists);
+    }
+    @Override
+    public void performMaintenance() {
+        System.out.println("Провести техобслуживание" + getModel() + " " + getBrand());
+    }
+    @Override
+    public void fixTheCar() {
+        System.out.println("Починить машину" + getModel() + " " + getBrand());
+
+    }
+    @Override
+    public void nameOfTheDriver() {
+        System.out.println("Водителя автомобиля зовут - " + getDriver());
+    }
+    @Override
+    public void carMechanics() {
+        System.out.println("Механики закрепленные за автомобилем : " + getMechanicLists());
+    }
+
+    @Override
+    public String toString() {
+        return "Trucks{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", driver=" + driver +
+                ", mechanicLists=" + mechanicLists +
+                '}';
     }
 
     @Override
@@ -47,6 +77,15 @@ public class Trucks extends Transport <DriverD> {
         System.out.println("Пройти диагностику " + getBrand() + " " + getModel());
     }
 
+    @Override
+    public void addACarToTheQueue() {
+        System.out.println("Добавить авто в очередь - " + getBrand() + " " + getModel());
+    }
+
+    @Override
+    public void technicalInspectionOfTheCar() {
+        System.out.println("Провести техосмотр авто - " + getBrand() + " " + getModel());
+    }
 }
 enum LoadCapacity{
     N1 (0,3.5),

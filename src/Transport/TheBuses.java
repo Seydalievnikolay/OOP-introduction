@@ -3,12 +3,51 @@ package Transport;
 import com.sun.jdi.connect.TransportTimeoutException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TheBuses extends Transport <DriverC>  {
+    /*Mechanic mechanic1 = new Mechanic("Пискунов Артём", "АСТ-54");
+    Mechanic mechanic2 = new Mechanic("Иноземцев Иван", "АСТ-54");
+    Mechanic mechanic3 = new Mechanic("Поляков Дмитрий", "Reaktor");
+    Mechanic mechanic4 = new Mechanic("Савинов Вячеслав", "TopGear");
+    List<Mechanic>mechanic = new ArrayList<>();*/
 
 
-    public TheBuses(String brand, String model, Double engineVolume, DriverC driver) {
-        super(brand, model, engineVolume, driver);
+
+
+
+    public TheBuses(String brand, String model, Double engineVolume, DriverC driver,List<Mechanic>mechanicLists) {
+        super(brand, model, engineVolume, driver,mechanicLists);
+    }
+    @Override
+    public void performMaintenance() {
+        System.out.println("Провести техобслуживание" + getModel() + " " + getBrand());
+    }
+    @Override
+    public void fixTheCar() {
+        System.out.println("Починить машину" + getModel() + " " + getBrand());
+
+    }
+
+    @Override
+    public String toString() {
+        return "TheBuses{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", driver=" + driver +
+                ", mechanicLists=" + mechanicLists +
+                '}';
+    }
+
+    @Override
+    public void nameOfTheDriver() {
+        System.out.println("Водителя автомобиля зовут - " + getDriver());
+    }
+    @Override
+    public void carMechanics() {
+        System.out.println("Механики закрепленные за автомобилем : " + getMechanicLists());
     }
 
     @Override
