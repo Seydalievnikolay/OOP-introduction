@@ -35,6 +35,19 @@ public abstract class Driver  {
         this.experience = experience;
     }
 
+    public void nameOfTheDriver() {
+        System.out.println("Водителя автомобиля зовут - " + getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Водитель{" +
+                "зовут: '" + name + '\'' +
+                ", водительские права категории: " + aDriversLicense +
+                ", опыт вождения :" + experience +
+                '}';
+    }
+
     public abstract void startMoving();
     public abstract void finishTheMovement();
     public abstract void refuelTheCar();
