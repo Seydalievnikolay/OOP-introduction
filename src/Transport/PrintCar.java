@@ -164,7 +164,7 @@ public class PrintCar extends  Driver {
             System.out.print(driverList);
         };*/
         for (Driver driver : driverList){
-            System.out.println(driver.getName());
+            System.out.println(driver.getName() +" "+ driver.getExperience());
         }
 
     }
