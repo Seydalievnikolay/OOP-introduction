@@ -147,6 +147,26 @@ public class PrintCar extends  Driver {
             iterator.remove();
         }
 
+        Set<Driver>driverList = new HashSet<>();
+        driverList.add(driverB);
+        driverList.add(driverB2);
+        driverList.add(driverB3);
+        driverList.add(driverB4);
+        driverList.add(driverC);
+        driverList.add(driverC2);
+        driverList.add(driverC3);
+        driverList.add(driverC4);
+        driverList.add(driverD);
+        driverList.add(driverD2);
+        driverList.add(driverD3);
+        driverList.add(driverD4);
+        /*if (driverList.contains(driverB)){
+            System.out.print(driverList);
+        };*/
+        for (Driver driver : driverList){
+            System.out.println(driver.getName() +" "+ driver.getExperience());
+        }
+
     }
 
 
