@@ -104,10 +104,10 @@ public class PrintCar extends  Driver {
             System.out.println(driver.getName() +" "+ driver.getExperience());
         }
 
-        Map<String,List> map = new HashMap<>();
-        map.put(String.valueOf(passengerCar4),mechanicLists);
-        map.put(String.valueOf(theBuses4),mechanicLists);
-        map.put(String.valueOf(trucks4),mechanicLists);
+        Map<Transport,List> map = new HashMap<>();
+        map.put(passengerCar4,mechanicLists);
+        map.put(theBuses4,mechanicLists);
+        map.put(trucks4,mechanicLists);
 
         for (Map.Entry result: map.entrySet()) {
             System.out.println(result.getKey() +" "+ result.getValue());

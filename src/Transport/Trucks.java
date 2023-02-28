@@ -7,6 +7,7 @@ public class Trucks extends Transport <DriverD> implements ServiceStation {
     public Trucks(String brand, String model, Double engineVolume, DriverD driver, List<Mechanic>mechanicLists) {
         super(brand, model, engineVolume, driver, mechanicLists);
     }
+
     @Override
     public void performMaintenance() {
         System.out.println("Провести техобслуживание" + getModel() + " " + getBrand());
